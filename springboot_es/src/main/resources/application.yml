@@ -1,0 +1,16 @@
+server:
+  port: 8090
+
+
+# 我们只用到jpa的es功能，其他关系型db我们可以不自动注入
+spring:
+  autoconfigure:
+    exclude=org:
+      springframework:
+        boot:
+          autoconfigure:
+            jdbc:
+              DataSourceAutoConfiguration:
+  elasticsearch:
+    rest:
+      uris: 127.0.0.1:9200
