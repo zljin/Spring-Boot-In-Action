@@ -9,9 +9,9 @@
 		<relativePath/>
 	</parent>
 	<groupId>com.zljin</groupId>
-	<artifactId>springboot_dev</artifactId>
+	<artifactId>coreJava</artifactId>
 	<version>1.0.0</version>
-	<name>springboot_dev</name>
+	<name>coreJava</name>
 	<description>The project for springboot</description>
 	<properties>
 		<java.version>1.8</java.version>
