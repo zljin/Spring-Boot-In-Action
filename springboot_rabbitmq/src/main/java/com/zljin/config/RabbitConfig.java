@@ -4,6 +4,8 @@ import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.core.TopicExchange;
+import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
+import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -28,6 +30,11 @@ public class RabbitConfig {
         return new Queue("banana-queue");
     }
 
+    @Bean
+    public Queue fishQueue(){
+        return new Queue("fish-Queue");
+    }
+
     /**
      * 配置交换机
      */
@@ -50,6 +57,18 @@ public class RabbitConfig {
     @Bean
     Binding bindBananaQueue() {
         return BindingBuilder.bind(bananaQueue()).to(exchangeTopic()).with("#.banana.#");
+    }
+
+
+    @Bean
+    Binding bindFishQueue() {
+        return BindingBuilder.bind(fishQueue()).to(exchangeTopic()).with("#.fish.#");
+    }
+
+    //对象序列化
+    @Bean
+    public MessageConverter jsonMessageConverter(){
+        return new Jackson2JsonMessageConverter();
     }
 }
 

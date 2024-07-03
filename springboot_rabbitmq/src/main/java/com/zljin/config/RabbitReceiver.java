@@ -23,5 +23,10 @@ public class RabbitReceiver {
     public void zhaowu(String msg) {
         System.out.println("赵五知道:" + msg);
     }
+
+    @RabbitListener(queues = "fish-Queue")
+    public void zouge(Object msg) {
+        System.out.println("邹哥知道:" + msg);
+    }
 }
 
