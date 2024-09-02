@@ -1,4 +1,4 @@
-package com.zljin.config;
+package com.zljin.listener;
 
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
  * 消息队列接收
  */
 @Component
-public class RabbitReceiver {
+public class FruitListener {
     /**
      * lisi负责监听apple-queue
      */

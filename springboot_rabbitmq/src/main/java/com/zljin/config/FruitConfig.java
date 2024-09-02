@@ -4,8 +4,6 @@ import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.core.TopicExchange;
-import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
-import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  * 消息队列配置类
  */
 @Configuration
-public class RabbitConfig {
+public class FruitConfig {
     /**
      * 苹果采购消息队列
      */
@@ -63,12 +61,6 @@ public class RabbitConfig {
     @Bean
     Binding bindFishQueue() {
         return BindingBuilder.bind(fishQueue()).to(exchangeTopic()).with("#.fish.#");
-    }
-
-    //对象序列化
-    @Bean
-    public MessageConverter jsonMessageConverter(){
-        return new Jackson2JsonMessageConverter();
     }
 }
 

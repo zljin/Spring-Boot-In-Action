@@ -30,4 +30,11 @@ public class HealthController {
         rabbitTemplate.convertAndSend("exchange-topic", "apple.banana", "苹果来了8斤;香蕉来了20斤");
         rabbitTemplate.convertAndSend("exchange-topic", "fish", msgMap);
     }
+
+    @GetMapping("/createOrder")
+    public void createOrder(){
+        Map<String,String> msgMap = new HashMap<>();
+        msgMap.put("ordernum","1234566");
+        rabbitTemplate.convertAndSend("order-event-exchange", "order.create.order", msgMap);
+    }
 }
