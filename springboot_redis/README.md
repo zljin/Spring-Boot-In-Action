@@ -4,8 +4,7 @@
 
 ## preview
 
-![](https://github.com/zljin/blogImage/blob/master/technical/redis_action_list.png?raw=true)
-
+![](https://cdn.jsdelivr.net/gh/zljin/document/img/technical/redis_action_list.png?raw=true)
 
 ## implement
 
@@ -47,4 +46,4 @@ del lockkey #执行结束,删除锁
 
 8. 用户共同关注，用Set数据结构，进行集合计算 todo
 
-9. 批处理方案 jedis
+9. 批处理方案
