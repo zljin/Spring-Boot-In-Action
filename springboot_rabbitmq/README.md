@@ -13,7 +13,7 @@ http://localhost:15672/#/   # guest guest
 
 publisher：生产者
 
-exchange个：交换机，负责消息路由
+exchange个：交换机,负责消息路由. 有三种类型分别代表三种消息模型: direct,fanout,topic
 
 queue：队列，存储消息
 
@@ -27,7 +27,9 @@ publisher ---> {(exchange ---> queue) virtualHost} ---> consumer
 publisher ---> {(exchange ---> queue) virtualHost} ---> consumer
 ```
 
-## springboot配置
+## springboot集成
+
+> https://github.com/zljin/Spring-Boot-In-Action/tree/master/springboot_rabbitmq
 
 ```yml
 spring:
@@ -44,12 +46,26 @@ spring:
         acknowledge-mode: manual # 手动签收
 ```
 
-## 消息模型
+## Exchange的三种消息模型
 
-常用发布订阅的Topic Exchange 主题模式
+direct
+点对点模式，消息中的路由键如果和 Binding 中的 bindingkey 一致，交换器就将消息发到对应的队列中。
+
+fanout
+广播模式，每个发到 fanout 类型交换器的消息都会分到所有绑定的队列上去
+
+topic (企业常用,重点关注此即可)
+
+主题模式，Topic Exchange 可通过通配符路由键匹配映射多个Queue
 
 ## 消息可靠性发送与接收消费
 
-## 死信队列
+发送： https://github.com/zljin/Spring-Boot-In-Action/blob/master/springboot_rabbitmq/src/main/java/com/zljin/config/MyRabbitConfig.java#L55
 
-MyOrderConfig.orderDelayQueue
+接收： https://github.com/zljin/Spring-Boot-In-Action/blob/master/springboot_rabbitmq/src/main/java/com/zljin/listener/OrderCloseListener.java#L27
+
+## 死信队列用法
+
+> 死信队列即延迟队列，给消息设置ttl,然后去往delayqueue,常用于如订单竣工场景，需要等待客户30秒后支付，是一个异步且需要等待的业务场景常用此技术实现
+
+https://github.com/zljin/Spring-Boot-In-Action/blob/master/springboot_rabbitmq/src/main/java/com/zljin/config/MyOrderConfig.java#L21
