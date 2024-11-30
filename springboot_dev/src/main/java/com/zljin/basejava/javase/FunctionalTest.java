@@ -1,4 +1,4 @@
-package com.zljin.basejava.jdk8;
+package com.zljin.basejava.javase;
 
 
 import java.util.ArrayList;

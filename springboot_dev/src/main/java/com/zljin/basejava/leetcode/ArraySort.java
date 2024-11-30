@@ -1,4 +1,4 @@
-package com.zljin.basejava.al;
+package com.zljin.basejava.leetcode;
 
 //https://pdai.tech/md/algorithm/alg-sort-overview.html
 public class ArraySort {

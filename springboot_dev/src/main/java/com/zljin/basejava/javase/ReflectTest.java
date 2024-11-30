@@ -1,4 +1,4 @@
-package com.zljin.basejava.base;
+package com.zljin.basejava.javase;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -8,7 +8,7 @@ public class ReflectTest {
     public static void main(String[] args) throws Exception {
 
         //1. get class image
-        Class<?> accountClass = Class.forName("com.zljin.basejava.base.Account");
+        Class<?> accountClass = Class.forName("com.zljin.basejava.javase.Account");
 
         //2. get constructor by image
         Constructor<?> constructor = accountClass.getConstructor(String.class, Integer.class, String.class);

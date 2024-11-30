@@ -1,6 +1,6 @@
-package com.zljin.basejava.jdk8;
+package com.zljin.utils;
 
-import com.zljin.basejava.base.Account;
+import com.zljin.basejava.javase.Account;
 
 import java.util.ArrayList;
 import java.util.List;

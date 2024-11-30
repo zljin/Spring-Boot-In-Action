@@ -1,4 +1,4 @@
-package com.zljin.basejava.base;
+package com.zljin.basejava.javase;
 
 
 public class Account implements Comparable<Account> {

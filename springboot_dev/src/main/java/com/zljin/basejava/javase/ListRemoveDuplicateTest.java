@@ -1,4 +1,4 @@
-package com.zljin.basejava.base;
+package com.zljin.basejava.javase;
 
 import java.util.*;
 import java.util.stream.Collectors;
