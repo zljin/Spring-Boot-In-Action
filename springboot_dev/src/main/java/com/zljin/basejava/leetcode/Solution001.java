@@ -4,8 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 两数之和
- * https://leetcode.cn/problems/two-sum/description/?envType=study-plan-v2&envId=top-100-liked
+ * 哈希
  */
 public class Solution001 {
     public static void main(String[] args) {
@@ -18,6 +17,7 @@ public class Solution001 {
     }
 
     public int[] twoSum(int[] nums, int target) {
+        //(value,index)
         Map<Integer, Integer> resultMap = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             if (resultMap.containsKey(target - nums[i])) {

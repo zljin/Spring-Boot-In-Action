@@ -1,7 +1,7 @@
 package com.zljin.basejava.leetcode;
 
 /**
- * https://leetcode.cn/problems/merge-two-sorted-lists/description/?envType=study-plan-v2&envId=top-100-liked
+ * 链表
  */
 public class Solution021 {
 
